@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public float force = 10f;
+    public float maxSpeed = 8f;
+    [Range(0f, 1f)]
+    public float counterMovement = 0.85f; // how snappy it feels (higher = snappier)
     public Transform cameraTransform;
 
     private Rigidbody rb;
@@ -35,6 +38,15 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 moveDirection = camForward * moveInput.y + camRight * moveInput.x;
 
-        rb.AddForce(moveDirection * force, ForceMode.Acceleration);
+        // Counter-movement: dampen horizontal velocity when no input or changing direction
+        Vector3 flatVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+        rb.AddForce(-flatVelocity * counterMovement, ForceMode.Impulse);
+
+        // Only accelerate if under max speed in the intended direction
+        float currentSpeed = Vector3.Dot(flatVelocity, moveDirection);
+        if (currentSpeed < maxSpeed)
+        {
+            rb.AddForce(moveDirection * force, ForceMode.Acceleration);
+        }
     }
 }
