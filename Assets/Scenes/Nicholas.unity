@@ -1132,7 +1132,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   maxHealth: 100
   currentHealth: 100
-  healthRegenCooldown: 0
+  healthRegenCooldown: 1
   healthDrainPerSecond: 15
   healthRegenPerSecond: 2
   healthRegenTimer: 5
