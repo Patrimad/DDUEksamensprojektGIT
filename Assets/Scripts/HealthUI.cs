@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class HealthUI : MonoBehaviour
+public class HealthUI1 : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Image image;
+    public HealthSystem HealthSystem;
 
     // Update is called once per frame
     void Update()
-    {
-        
+    { 
+        float targetAlpha = 1f - (HealthSystem.currentHealth / HealthSystem.maxHealth);
+
+        Color c = image.color;
+        c.a = Mathf.Lerp(c.a, targetAlpha, Time.deltaTime * 5f);
+        image.color = c;
     }
 }
