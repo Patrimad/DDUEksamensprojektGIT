@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1624,12 +1624,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37adcd6c27fb99d409624afdc047a27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
-  healthBar: {fileID: 0}
   maxHealth: 100
   currentHealth: 100
   healthRegenCooldown: 1
   healthDrainPerSecond: 15
-  healthRegenPerSecond: 2
+  healthRegenPerSecond: 10
   healthRegenTimer: 5
   takingDamage: 0
 --- !u!1 &2029196491

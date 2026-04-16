@@ -3,8 +3,8 @@ using UnityEngine.Playables;
 
 public class HealthSystem : MonoBehaviour
 {
-    [Header("BarSystem")]
-    public HealthSystem healthBar;
+    //[Header("BarSystem")]
+    //public HealthSystem healthBar;
 
     [Header("MaxStats")]
     public float maxHealth = 100;
@@ -14,7 +14,7 @@ public class HealthSystem : MonoBehaviour
     public float currentHealth = 100;
     public float healthRegenCooldown = 1f;
     public float healthDrainPerSecond = 15f;
-    public float healthRegenPerSecond = 1f;
+    public float healthRegenPerSecond = 10f;
     public float healthRegenTimer = 5f;
     
     public bool takingDamage = false;
