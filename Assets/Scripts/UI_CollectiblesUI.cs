@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UI_CollectibleUI : MonoBehaviour
 {
     public static UI_CollectibleUI Instance;
-    public Text scoreText;
+    [SerializeField] public TextMeshProUGUI scoreText;
 
     void Awake() 
     { 

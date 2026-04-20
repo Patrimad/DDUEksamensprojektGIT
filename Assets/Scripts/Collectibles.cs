@@ -7,7 +7,6 @@ public class Collectibles : MonoBehaviour
     public int value = 1;
     public bool respawn = false;
     public float respawnTime = 5f;
-    public GameObject pickupEffect;
 
     public CollectibleManager manager;
 
@@ -18,7 +17,7 @@ public class Collectibles : MonoBehaviour
 
     public void Collect()
     {
-        if (pickupEffect) Instantiate(pickupEffect, transform.position, Quaternion.identity);
+       Destroy(this.gameObject);
         manager?.OnCollected(this);
     }
 
