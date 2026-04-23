@@ -15,7 +15,7 @@ public class CameraGunControll : MonoBehaviour
     public GameObject corshair;
 
     [Header("Settings")]
-    [SerializeField] private float bulletSpeed = 50f;
+    //[SerializeField] private float bulletSpeed = 50f;
     [SerializeField] private float maxRaycastDistance = 500f;
     [SerializeField] private LayerMask raycastMask;
 
@@ -30,6 +30,7 @@ public class CameraGunControll : MonoBehaviour
     {
         aimCamera.Priority = isAiming ? 10 : 0;
         freeLookCam.Priority = isAiming ? 0 : 10;
+        corshair.SetActive(isAiming);
     }
     void OnAttack(InputValue value)
     {
@@ -42,6 +43,7 @@ public class CameraGunControll : MonoBehaviour
     void OnAim(InputValue value)
     {
         isAiming = value.isPressed;
+        ShowCorsair();
     }
     
     IEnumerator ShowCorsair()
