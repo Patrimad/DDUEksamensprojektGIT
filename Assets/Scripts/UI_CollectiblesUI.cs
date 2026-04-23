@@ -19,6 +19,6 @@ public class UI_CollectibleUI : MonoBehaviour
 
     public void UpdateScore(int newScore)
     {
-        if (scoreText) scoreText.text = "Score: " + newScore;
+        if (scoreText) scoreText.text = "Carrots: " + newScore;
     }
 }

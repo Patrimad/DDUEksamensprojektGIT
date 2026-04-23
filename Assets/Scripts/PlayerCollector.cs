@@ -23,11 +23,11 @@ public class PlayerCollector : MonoBehaviour
     //        //}
     //    }
     //}
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (((1 << collision.gameObject.layer) & collectibleLayer) != 0)
+        if (((1 << other.gameObject.layer) & collectibleLayer) != 0)
         {
-            var col = collision.gameObject.GetComponent<Collectibles>();
+            var col = other.gameObject.GetComponent<Collectibles>();
             if (col != null)
             {
                 col.Collect();

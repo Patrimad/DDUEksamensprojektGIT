@@ -50,7 +50,7 @@ public class CollectibleManager : MonoBehaviour
             c.Deactivate();
         }
 
-        
+
     }
 
     IEnumerator RespawnCoroutine(Collectibles c, float delay)
@@ -58,7 +58,6 @@ public class CollectibleManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         collectedState[c.collectibleID] = false;
         c.Reactivate();
-        
     }
 
     void ApplyStates()

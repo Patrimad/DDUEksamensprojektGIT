@@ -5,12 +5,12 @@ public class Obstacle_Pillar : MonoBehaviour
 {
    
     ObstacleParent obstacleParent;  
-
+    public float forceModifier = 0f;
 
     private void Start()
     {
         obstacleParent = GetComponentInParent<ObstacleParent>();
-        obstacleParent.forceModifier = 10f;
+        //obstacleParent.forceModifier = 10f;
         obstacleParent.rb = GetComponent<Rigidbody>();
     }
 
@@ -20,7 +20,7 @@ public class Obstacle_Pillar : MonoBehaviour
         
         obstacleParent.rb = collision.gameObject.GetComponent<Rigidbody>();
 
-        float forceVariable = (obstacleParent.rb.linearVelocity.x + obstacleParent.rb.linearVelocity.y) *  obstacleParent.forceModifier;
+        float forceVariable = (obstacleParent.rb.linearVelocity.x + obstacleParent.rb.linearVelocity.y) *  forceModifier;
 
         if (forceVariable < 30f)
         {

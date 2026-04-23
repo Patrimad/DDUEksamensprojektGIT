@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class Dart_Script : MonoBehaviour
 {
-    public float damage = 10f;
+    public int damage = 1;
     public float lifetime = 5f;
     public float speed = 10f;
+
+    public LayerMask enemyLayer;
 
     void Awake()
     {
@@ -21,7 +23,7 @@ public class Dart_Script : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (CompareTag("Enemy"))
+        if (collision.gameObject.layer == enemyLayer)
         {
             Debug.Log(collision.gameObject.name);
             Destroy(gameObject);
