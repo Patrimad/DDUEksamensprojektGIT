@@ -47,4 +47,6 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(moveDirection * force, ForceMode.Acceleration);
         }
     }
+
+        
 }

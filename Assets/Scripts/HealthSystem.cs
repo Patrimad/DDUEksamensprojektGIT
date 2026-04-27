@@ -1,12 +1,18 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 using UnityEngine.Playables;
 
 public class HealthSystem : MonoBehaviour
 {
     
+    private Rigidbody rb;
     public HealthUI healthUI;
+    CameraGunControll cameraGunControll;
     PlayerMovement playerMovement;
+
+    public float counterMovement = 0.85f;
+
 
     [Header("MaxStats")]
     public float maxHealth = 100;
@@ -20,10 +26,29 @@ public class HealthSystem : MonoBehaviour
     public float healthRegenTimer = 5f;
     
     public bool takingDamage = false;
+    public bool isDead = false;
+
+    private void Start()
+    {
+        cameraGunControll = GetComponent<CameraGunControll>();
+        playerMovement = GetComponent<PlayerMovement>();
+        currentHealth = maxHealth;
+        rb = GetComponent<Rigidbody>();
+    }
+
 
     private void Update()
     {
-        HandleHealthregen();
+
+        if (isDead == true)
+        {
+            Die();
+            return;
+        }
+        else
+        {
+            HandleHealthregen();
+        }
     }
 
     
@@ -36,15 +61,23 @@ public class HealthSystem : MonoBehaviour
 
         currentHealth = Mathf.Max(currentHealth - damage, 0);
         
-
         if (currentHealth <= 0)
         {
-            playerMovement.enabled = false;
-            Debug.Log("Player is Dead");
+            isDead = true;
         }
+
     }
 
-    
+    public void Die()
+    {
+        cameraGunControll.enabled = false;
+        playerMovement.enabled = false;
+        Debug.Log("Player is Dead");
+        rb.isKinematic = true;
+        
+
+
+    }
 
     public void GiveHealth(int health)
     {

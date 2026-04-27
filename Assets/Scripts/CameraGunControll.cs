@@ -5,7 +5,7 @@ using Unity.Cinemachine;
 
 public class CameraGunControll : MonoBehaviour
 {
-    public bool isAiming;
+    public bool isAiming; 
 
     [Header("References")]
     [SerializeField] private Transform muzzlePoint;
@@ -18,7 +18,7 @@ public class CameraGunControll : MonoBehaviour
     [SerializeField] private float bulletSpeed = 30f;
     [SerializeField] private float maxRaycastDistance = 500f;
     [SerializeField] private float minRaycastDistance = 2f; // skips near-camera geometry + player collider
-    [SerializeField] private LayerMask raycastMask;         // make sure Player + Bullet layers are NOT in this mask
+    [SerializeField] private LayerMask raycastMask; // make sure Player + Bullet layers are NOT in this mask
 
     private Camera mainCamera;
 
