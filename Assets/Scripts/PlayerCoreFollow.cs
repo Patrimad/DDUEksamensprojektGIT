@@ -9,6 +9,7 @@ public class PlayerCoreFollow : MonoBehaviour
     {
         mainCamera = Camera.main;
     }
+
     void FixedUpdate()
     {
         if (playerModel != null)

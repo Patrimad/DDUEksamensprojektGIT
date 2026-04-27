@@ -6,18 +6,19 @@ using Unity.Cinemachine;
 public class CameraGunControll : MonoBehaviour
 {
     public bool isAiming;
-    
+
     [Header("References")]
     [SerializeField] private Transform muzzlePoint;
     public GameObject bulletPrefab;
     public CinemachineCamera freeLookCam;
     public CinemachineCamera aimCamera;
-    public GameObject corshair;
+    public GameObject crosshair;
 
     [Header("Settings")]
-    //[SerializeField] private float bulletSpeed = 50f;
+    [SerializeField] private float bulletSpeed = 30f;
     [SerializeField] private float maxRaycastDistance = 500f;
-    [SerializeField] private LayerMask raycastMask;
+    [SerializeField] private float minRaycastDistance = 2f; // skips near-camera geometry + player collider
+    [SerializeField] private LayerMask raycastMask;         // make sure Player + Bullet layers are NOT in this mask
 
     private Camera mainCamera;
 
@@ -30,48 +31,34 @@ public class CameraGunControll : MonoBehaviour
     {
         aimCamera.Priority = isAiming ? 10 : 0;
         freeLookCam.Priority = isAiming ? 0 : 10;
-        corshair.SetActive(isAiming);
     }
+
     void OnAttack(InputValue value)
     {
-        if (value.isPressed)
-        {
-            Shoot();
-        }
+        if (value.isPressed) Shoot();
     }
 
     void OnAim(InputValue value)
     {
         isAiming = value.isPressed;
-        ShowCorsair();
-    }
-    
-    IEnumerator ShowCorsair()
-    {
-        yield return new WaitForSeconds(0.25f);
-        corshair.SetActive(enabled);
+        StartCoroutine(ShowCrosshair());
     }
 
+    IEnumerator ShowCrosshair()
+    {
+        yield return new WaitForSeconds(0.25f);
+        crosshair.SetActive(isAiming);
+    }
 
     private void Shoot()
     {
-        Ray ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-
-        Vector3 targetPoint;
-
-        if (Physics.Raycast(ray, out RaycastHit hit, maxRaycastDistance, raycastMask))
-        {
-            targetPoint = hit.point;
-        }
-        else
-        {
-            targetPoint = ray.origin + ray.direction * maxRaycastDistance;
-        }
-
-        Vector3 direction = (targetPoint - muzzlePoint.position).normalized;
+        Vector3 direction = muzzlePoint.forward;
 
         GameObject bullet = Instantiate(bulletPrefab, muzzlePoint.position, Quaternion.LookRotation(direction));
 
-        //bullet.GetComponent<Dart_Script>().SetVelocity(direction * bulletSpeed);
+        if (bullet.TryGetComponent(out Rigidbody rb))
+        {
+            rb.linearVelocity = direction * bulletSpeed;
+        }
     }
 }
