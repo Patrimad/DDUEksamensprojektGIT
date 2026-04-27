@@ -874,10 +874,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 369003775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.727}
-  m_AnchorMin: {x: 0.324875, y: 0.75114816}
-  m_AnchorMax: {x: 0.324875, y: 0.75114816}
-  m_AnchoredPosition: {x: -60, y: 17}
-  m_SizeDelta: {x: 1137.8027, y: 98.2543}
+  m_AnchorMin: {x: 0.17179166, y: 0.71977776}
+  m_AnchorMax: {x: 0.17179166, y: 0.71977776}
+  m_AnchoredPosition: {x: 243, y: 51}
+  m_SizeDelta: {x: 1157.5764, y: 76.5175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217347814
 MonoBehaviour:
@@ -899,10 +899,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SUPER HAMSTER BALL 3D ULTRA PRO MAX!!!
-
-    Collectors, Limited, Special
-    Edition!!!'
+  m_text: Vengeful Hamster Ball 3D
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -968,7 +965,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -2.3078003, z: -129.96295, w: -13.940815}
+  m_margin: {x: 0, y: -2.3078003, z: 465.65265, w: -13.940815}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
