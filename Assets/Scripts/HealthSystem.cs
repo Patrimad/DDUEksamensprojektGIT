@@ -72,11 +72,10 @@ public class HealthSystem : MonoBehaviour
     {
         cameraGunControll.enabled = false;
         playerMovement.enabled = false;
+
         Debug.Log("Player is Dead");
-        rb.isKinematic = true;
         
-
-
+        rb.isKinematic = true;
     }
 
     public void GiveHealth(int health)
