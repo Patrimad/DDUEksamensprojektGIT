@@ -21,6 +21,7 @@ public class Dart_Script : MonoBehaviour
         if (((1 << collision.gameObject.layer) & enemyLayer) != 0)
         {
             Debug.Log(collision.gameObject.name);
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

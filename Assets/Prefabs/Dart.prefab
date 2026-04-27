@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1609938714764013296}
   - component: {fileID: 6485489821927595504}
   - component: {fileID: 985960635961566546}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36ea31f5cf7b58f28e98e5b6639abb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dart_Script
-  damage: 10
+  damage: 1
   lifetime: 5
   enemyLayer:
     serializedVersion: 2
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1273891329094813924}
   - component: {fileID: 5632471123304072903}
   - component: {fileID: 9175615014684426395}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 229657757496573700}
   - component: {fileID: 3632391021642725232}
   - component: {fileID: 7945121915093187162}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DartTip
   m_TagString: Untagged
   m_Icon: {fileID: 0}

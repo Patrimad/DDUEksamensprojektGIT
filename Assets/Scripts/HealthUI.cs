@@ -1,7 +1,8 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthUI1 : MonoBehaviour
+public class HealthUI : MonoBehaviour
 {
     public Image image;
     public HealthSystem HealthSystem;
@@ -14,5 +15,14 @@ public class HealthUI1 : MonoBehaviour
         Color c = image.color;
         c.a = Mathf.Lerp(c.a, targetAlpha, Time.deltaTime * 5f);
         image.color = c;
+    }
+
+    public void CheckHealth()
+    {
+        if (HealthSystem.currentHealth <= 0)
+        {
+            // Handle player death (e.g., show game over screen, restart level, etc.)          
+            Debug.Log("Player has died!");
+        }
     }
 }

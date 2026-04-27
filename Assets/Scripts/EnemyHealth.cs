@@ -15,23 +15,15 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == DartLayer)
-        {
-            int damage = collision.gameObject.GetComponent<Dart_Script>().damage;
-            TakeDamage(damage); // Adjust damage value as needed
-            Debug.Log("Enemy hit! Current health: " + currentHealth);
-        }
-    }
-
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            Debug.Log("Enemy died!");
             Die();
         }
+
     }
 
     public void Die()

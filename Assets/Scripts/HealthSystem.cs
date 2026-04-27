@@ -1,10 +1,12 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Playables;
 
 public class HealthSystem : MonoBehaviour
 {
-    //[Header("BarSystem")]
-    //public HealthSystem healthBar;
+    
+    public HealthUI healthUI;
+    PlayerMovement playerMovement;
 
     [Header("MaxStats")]
     public float maxHealth = 100;
@@ -19,26 +21,13 @@ public class HealthSystem : MonoBehaviour
     
     public bool takingDamage = false;
 
-
-
-    private void Start()
-    {
-        SetupHealth();
-
-    }
-
     private void Update()
     {
         HandleHealthregen();
     }
 
-    //Health
-    void SetupHealth()
-    {
-        //healthBar.SetMaxValue(maxHealth);
-        //healthBar.SetValue(currentHealth);
-        //healthBar.SetText($"{maxHealth.ToString()} / {currentHealth.ToString()}");
-    }
+    
+    
     public void Takedamage(int damage)
     {
         takingDamage = true;
@@ -46,14 +35,17 @@ public class HealthSystem : MonoBehaviour
         Invoke(nameof(IsTakingDamage), healthRegenCooldown);
 
         currentHealth = Mathf.Max(currentHealth - damage, 0);
-        //healthBar.SetValue(currentHealth);
-        //healthBar.SetText($"{currentHealth} / {maxHealth}");
+        
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
+            playerMovement.enabled = false;
             Debug.Log("Player is Dead");
         }
     }
+
+    
+
     public void GiveHealth(int health)
     {
 
@@ -66,8 +58,7 @@ public class HealthSystem : MonoBehaviour
         {
             currentHealth += health;
         }
-        //healthBar.SetValue(currentHealth);
-        //healthBar.SetText($"{maxHealth.ToString()} / {currentHealth.ToString()}");
+            
 
         RegenerateHealth(Time.deltaTime);
     }
@@ -76,9 +67,7 @@ public class HealthSystem : MonoBehaviour
         maxHealth += maxHealthMod;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        //healthBar.SetMaxValue(maxHealth);
-        //healthBar.SetValue(currentHealth);
-        //healthBar.SetText($"{currentHealth} / {maxHealth}");
+        
 
     }
     
