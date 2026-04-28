@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Processors;
 using UnityEngine.Playables;
 
@@ -8,6 +9,7 @@ public class HealthSystem : MonoBehaviour
     
     private Rigidbody rb;
     public HealthUI healthUI;
+    public PlayerInput playerInput;
     CameraGunControll cameraGunControll;
     PlayerMovement playerMovement;
 
@@ -70,6 +72,10 @@ public class HealthSystem : MonoBehaviour
 
     public void Die()
     {
+        playerInput.actions["Look"].Disable();
+        playerInput.actions["Attack"].Disable();
+        playerInput.actions["Aim"].Disable();
+
         cameraGunControll.enabled = false;
         playerMovement.enabled = false;
 

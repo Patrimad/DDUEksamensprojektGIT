@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 3;
     private int currentHealth;
 
-    public LayerMask DartLayer; // Layer for the enemy
+    LayerMask DartLayer; // Layer for the enemy
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
