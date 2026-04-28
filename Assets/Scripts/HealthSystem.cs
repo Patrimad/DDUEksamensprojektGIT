@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Processors;
@@ -8,13 +9,20 @@ public class HealthSystem : MonoBehaviour
 {
     
     private Rigidbody rb;
+    [SerializeField] private GameObject crosshair;
+    [SerializeField] private GameObject deathDisplay;
+
     public HealthUI healthUI;
     public PlayerInput playerInput;
+    public CinemachineCamera aimCamera;
+    public CinemachineCamera freeLookCam;
+
+    CinemachineBrain cinemachineBrain;
+    Camera mainCam;
     CameraGunControll cameraGunControll;
     PlayerMovement playerMovement;
 
     public float counterMovement = 0.85f;
-
 
     [Header("MaxStats")]
     public float maxHealth = 100;
@@ -34,6 +42,8 @@ public class HealthSystem : MonoBehaviour
     {
         cameraGunControll = GetComponent<CameraGunControll>();
         playerMovement = GetComponent<PlayerMovement>();
+        mainCam = Camera.main;
+        cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
         currentHealth = maxHealth;
         rb = GetComponent<Rigidbody>();
     }
@@ -67,7 +77,6 @@ public class HealthSystem : MonoBehaviour
         {
             isDead = true;
         }
-
     }
 
     public void Die()
@@ -76,12 +85,24 @@ public class HealthSystem : MonoBehaviour
         playerInput.actions["Attack"].Disable();
         playerInput.actions["Aim"].Disable();
 
+        cinemachineBrain.enabled = false;
         cameraGunControll.enabled = false;
-        playerMovement.enabled = false;
+        freeLookCam.enabled = false;
+        aimCamera.enabled = false;
+        //playerMovement.enabled = false;
+
+        crosshair.SetActive(false);
+        deathDisplay.SetActive(true);
+
+        Time.timeScale = 0f;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         Debug.Log("Player is Dead");
         
-        rb.isKinematic = true;
+        //rb.isKinematic = true;
+
     }
 
     public void GiveHealth(int health)
