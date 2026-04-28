@@ -262,6 +262,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1559413363393552822, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 1305369012}
+    - target: {fileID: 1559413363393552822, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
+      propertyPath: crosshair
+      value: 
+      objectReference: {fileID: 2121256998}
+    - target: {fileID: 1559413363393552822, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
+      propertyPath: deathDisplay
+      value: 
+      objectReference: {fileID: 102465110}
     - target: {fileID: 2455448283037940287, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1665,6 +1677,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1399203451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1305369012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4302303175708407405, guid: 60a3a91d6b3511d40bf474889054cfa5, type: 3}
+  m_PrefabInstance: {fileID: 1446766942972454252}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!4 &1325944233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8008627707871670589, guid: 4e80594b1076fd64b85d0784c5142396, type: 3}

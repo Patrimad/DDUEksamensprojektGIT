@@ -15,13 +15,6 @@ public class HealthUI : MonoBehaviour
         Color c = image.color;
         c.a = Mathf.Lerp(c.a, targetAlpha, Time.deltaTime * 5f);
         image.color = c;
-
-        if (HealthSystem.isDead == true)
-        {
-            // Handle player death (e.g., show game over screen, restart level, etc.)
-            targetAlpha = 1f;
-            Debug.Log("Player has died!");
-        }
     }
 
     //public void CheckHealth()

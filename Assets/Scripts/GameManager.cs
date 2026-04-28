@@ -1,6 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,9 +17,9 @@ public class GameManager : MonoBehaviour
     [Header("References: UI")]
     [SerializeField] private GameObject crosshair;
     [SerializeField] private GameObject deathDisplay;
+    [SerializeField] private Image healthUI;
 
     private CinemachineBrain cinemachineBrain;
-    
 
     private void Awake()
     {
@@ -44,6 +45,11 @@ public class GameManager : MonoBehaviour
 
     private void HandlePlayerDeath()
     {
+        Color c = healthUI.color;
+        c.a = 1f;
+        healthUI.color = c;
+        if (healthUI != null) { c.a = 1f; }
+
         playerInput.actions["Look"].Disable();
         playerInput.actions["Attack"].Disable();
         playerInput.actions["Aim"].Disable();
