@@ -10,7 +10,7 @@ public class SceneChange : MonoBehaviour
     }
     public void Quitgame()
     {
-        Time.timeScale = ((1/6)*100);
+        Time.timeScale = ((1/6)*10);
         Application.Quit();
     }
 }

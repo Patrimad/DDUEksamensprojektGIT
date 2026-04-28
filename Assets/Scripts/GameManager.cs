@@ -69,12 +69,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameManager: Player is dead.");
     }
     
-    public void RestartGame()
-    {
-        Time.timeScale = 1f;
-        var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
-        UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
-    }
+    
     
     public void GoToMainMenu(string menuSceneName = "MainMenu")
     {
