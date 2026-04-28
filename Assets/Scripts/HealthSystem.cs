@@ -1,159 +1,81 @@
-using System.Runtime.CompilerServices;
-using Unity.Cinemachine;
+using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Processors;
-using UnityEngine.Playables;
 
 public class HealthSystem : MonoBehaviour
 {
-    
-    private Rigidbody rb;
-    [SerializeField] private GameObject crosshair;
-    [SerializeField] private GameObject deathDisplay;
+    public event Action OnPlayerDied;
 
     public HealthUI healthUI;
-    public PlayerInput playerInput;
-    public CinemachineCamera aimCamera;
-    public CinemachineCamera freeLookCam;
 
-    CinemachineBrain cinemachineBrain;
-    Camera mainCam;
-    CameraGunControll cameraGunControll;
-    PlayerMovement playerMovement;
+    [Header("Max Stats")]
+    public float maxHealth = 100f;
 
-    public float counterMovement = 0.85f;
-
-    [Header("MaxStats")]
-    public float maxHealth = 100;
-    
-    
     [Header("Updated Stats")]
-    public float currentHealth = 100;
+    public float currentHealth = 100f;
     public float healthRegenCooldown = 1f;
-    public float healthDrainPerSecond = 15f;
     public float healthRegenPerSecond = 10f;
     public float healthRegenTimer = 5f;
-    
+
     public bool takingDamage = false;
     public bool isDead = false;
 
     private void Start()
     {
-        cameraGunControll = GetComponent<CameraGunControll>();
-        playerMovement = GetComponent<PlayerMovement>();
-        mainCam = Camera.main;
-        cinemachineBrain = mainCam.GetComponent<CinemachineBrain>();
         currentHealth = maxHealth;
-        rb = GetComponent<Rigidbody>();
     }
-
 
     private void Update()
     {
+        if (isDead) return;
 
-        if (isDead == true)
-        {
-            Die();
-            return;
-        }
-        else
-        {
-            HandleHealthregen();
-        }
+        HandleHealthRegen();
     }
+    
 
-    
-    
-    public void Takedamage(int damage)
+    public void TakeDamage(int damage)
     {
-        takingDamage = true;
-        CancelInvoke(nameof(IsTakingDamage));
-        Invoke(nameof(IsTakingDamage), healthRegenCooldown);
+        if (isDead) return;
 
-        currentHealth = Mathf.Max(currentHealth - damage, 0);
-        
-        if (currentHealth <= 0)
+        takingDamage = true;
+        CancelInvoke(nameof(ClearTakingDamage));
+        Invoke(nameof(ClearTakingDamage), healthRegenCooldown);
+
+        currentHealth = Mathf.Max(currentHealth - damage, 0f);
+
+        if (currentHealth <= 0f)
         {
             isDead = true;
+            OnPlayerDied?.Invoke();
         }
-    }
-
-    public void Die()
-    {
-        playerInput.actions["Look"].Disable();
-        playerInput.actions["Attack"].Disable();
-        playerInput.actions["Aim"].Disable();
-
-        cinemachineBrain.enabled = false;
-        cameraGunControll.enabled = false;
-        freeLookCam.enabled = false;
-        aimCamera.enabled = false;
-        //playerMovement.enabled = false;
-
-        crosshair.SetActive(false);
-        deathDisplay.SetActive(true);
-
-        Time.timeScale = 0f;
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        Debug.Log("Player is Dead");
-        
-        //rb.isKinematic = true;
-
     }
 
     public void GiveHealth(int health)
     {
-
-
-        if (currentHealth + health >= maxHealth)
-        {
-            currentHealth = maxHealth;
-        }
-        else
-        {
-            currentHealth += health;
-        }
-            
-
-        RegenerateHealth(Time.deltaTime);
+        currentHealth = Mathf.Min(currentHealth + health, maxHealth);
     }
+
     public void ChangeMaxHealth(int maxHealthMod)
     {
         maxHealth += maxHealthMod;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-        
-
+        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
     }
     
-    public void RegenerateHealth(float deltaTime)
+
+    private void HandleHealthRegen()
     {
-       if (takingDamage)
-       {
+        if (takingDamage)
             healthRegenTimer = 5f;
-       }
 
         if (healthRegenTimer > 0f)
         {
-            healthRegenTimer -= deltaTime;
+            healthRegenTimer -= Time.deltaTime;
             return;
         }
 
-
-        currentHealth += healthRegenPerSecond * deltaTime;
-        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+        currentHealth = Mathf.Clamp(currentHealth + healthRegenPerSecond * Time.deltaTime, 0f, maxHealth);
     }
 
-    void HandleHealthregen()
-    {    
-           RegenerateHealth(Time.deltaTime);  
-    }
-
-    void IsTakingDamage()
+    private void ClearTakingDamage()
     {
         takingDamage = false;
     }

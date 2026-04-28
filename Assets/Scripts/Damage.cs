@@ -9,7 +9,7 @@ public class Damage : MonoBehaviour
             HealthSystem healthSystem = collision.gameObject.GetComponent<HealthSystem>();
             if (healthSystem != null)
             {
-                healthSystem.Takedamage(25); // Adjust damage value as needed
+                healthSystem.TakeDamage(25); // Adjust damage value as needed
             }
         }
     }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 32273988503227156}
   - component: {fileID: 1429274808925052241}
   - component: {fileID: 2243929467404828420}
+  - component: {fileID: 943196553471803108}
   m_Layer: 0
   m_Name: GunNozzle
   m_TagString: Untagged
@@ -107,6 +108,26 @@ MonoBehaviour:
   aimMask:
     serializedVersion: 2
     m_Bits: 95
+--- !u!114 &943196553471803108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736119803548775475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &3530238936054544309
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +140,6 @@ GameObject:
   - component: {fileID: 3169972993035435633}
   - component: {fileID: 470520678661658519}
   - component: {fileID: 3220720185518997216}
-  - component: {fileID: 7599406046917105439}
   - component: {fileID: 8367741311421132089}
   m_Layer: 0
   m_Name: AimCam
@@ -278,24 +298,6 @@ MonoBehaviour:
     Time: 0
     Smoothing: 0
     IgnoreY: 0
---- !u!114 &7599406046917105439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3530238936054544309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e07fc4b19d0c7e36ebd5120bde7fa6a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ThirdPersonOrbit
-  target: {fileID: 8132701931301926199}
-  distance: 5
-  xSpeed: 120
-  ySpeed: 80
-  yMinLimit: -40
-  yMaxLimit: 80
 --- !u!114 &8367741311421132089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,6 +814,7 @@ GameObject:
   - component: {fileID: 7107919043904974159}
   - component: {fileID: 7789041022472245598}
   - component: {fileID: 4177153195261336711}
+  - component: {fileID: 8919851746931663742}
   m_Layer: 0
   m_Name: Player_Model
   m_TagString: Player
@@ -1021,6 +1024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37adcd6c27fb99d409624afdc047a27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
+  healthUI: {fileID: 0}
+  counterMovement: 0.85
   maxHealth: 100
   currentHealth: 100
   healthRegenCooldown: 1
@@ -1028,6 +1033,7 @@ MonoBehaviour:
   healthRegenPerSecond: 10
   healthRegenTimer: 5
   takingDamage: 0
+  isDead: 0
 --- !u!114 &4177153195261336711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,6 +1049,26 @@ MonoBehaviour:
   collectibleLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &8919851746931663742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6263359304493935939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &7332440775469898635
 GameObject:
   m_ObjectHideFlags: 0

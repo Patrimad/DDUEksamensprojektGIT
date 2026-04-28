@@ -17,8 +17,8 @@ public class CameraGunControll : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float bulletSpeed = 30f;
     [SerializeField] private float maxRaycastDistance = 500f;
-    [SerializeField] private float minRaycastDistance = 2f; // skips near-camera geometry + player collider
-    [SerializeField] private LayerMask raycastMask; // make sure Player + Bullet layers are NOT in this mask
+    [SerializeField] private float minRaycastDistance = 2f;
+    [SerializeField] private LayerMask raycastMask;
 
     private Camera mainCamera;
 

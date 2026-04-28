@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b77b49a4-6319-443c-b373-6c861df6711b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DDUEksamensprojektGIT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DDUEksamensprojektGIT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player_Main.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player_Main.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Patryk.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Patryk.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraGunControll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraGunControll.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Damage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Damage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +22,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraGunControll.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Dart_Script.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyLogic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GunRotation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCoreFollow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="McpProjectServerCommands">
     <commands />
@@ -103,6 +112,8 @@
       <workItem from="1776330688112" duration="3296000" />
       <workItem from="1776669129283" duration="10022000" />
       <workItem from="1776934054376" duration="707000" />
+      <workItem from="1777283362746" duration="5945000" />
+      <workItem from="1777360001415" duration="6284000" />
     </task>
     <servers />
   </component>
