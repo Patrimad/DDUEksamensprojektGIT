@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1749591230753092169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392761932504257501}
+  - component: {fileID: 1559413363393552822}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1392761932504257501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749591230753092169}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -16.31147, y: 2.1031, z: -12.11531}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2455448283037940287}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1559413363393552822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749591230753092169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35d09c248c0aed6b19a77f9fdca0b91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  healthSystem: {fileID: 7789041022472245598}
+  playerInput: {fileID: 2654763903999529868}
+  cameraGunControll: {fileID: 7107919043904974159}
+  aimCamera: {fileID: 3169972993035435633}
+  freeLookCam: {fileID: 6111993159157778766}
+  crosshair: {fileID: 0}
+  deathDisplay: {fileID: 0}
 --- !u!1 &2736119803548775475
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,6 +845,7 @@ Transform:
   - {fileID: 7064189692997084236}
   - {fileID: 8574319464579471199}
   - {fileID: 3930698797166934924}
+  - {fileID: 1392761932504257501}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6263359304493935939
@@ -1025,11 +1077,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   healthUI: {fileID: 0}
-  counterMovement: 0.85
   maxHealth: 100
   currentHealth: 100
   healthRegenCooldown: 1
-  healthDrainPerSecond: 15
   healthRegenPerSecond: 10
   healthRegenTimer: 5
   takingDamage: 0
