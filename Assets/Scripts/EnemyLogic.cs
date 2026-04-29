@@ -20,7 +20,7 @@ public class EnemyLogic : MonoBehaviour
 
     private float stateTimer = 0f;
     private bool investigatingLastPosition = false;
-    
+
     private int currentPostIndex = 0;
     private float idleWaitTimer = 0f;
     public float idleWaitDuration = 2f;
@@ -29,11 +29,14 @@ public class EnemyLogic : MonoBehaviour
 
     private HealthSystem hs;
 
+    public float attackCooldown = 1f;
+    private float attackCooldownTimer = 0f;
+
     void Start()
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null) { player = playerObj.transform; }
-        
+
         hs = player.gameObject.GetComponent<HealthSystem>();
 
         agent = GetComponent<NavMeshAgent>();
@@ -42,6 +45,9 @@ public class EnemyLogic : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (attackCooldownTimer > 0f)                  
+            attackCooldownTimer -= Time.fixedDeltaTime;
+
         switch (currentState)
         {
             case AIState.idle:
@@ -58,7 +64,7 @@ public class EnemyLogic : MonoBehaviour
                 break;
         }
     }
-    
+
     void HandleIdle()
     {
         agent.isStopped = true;
@@ -154,7 +160,7 @@ public class EnemyLogic : MonoBehaviour
         }
 
         float distToPlayer = Vector3.Distance(transform.position, player.position);
-        
+
         Vector3 dir = (player.position - transform.position).normalized;
         transform.rotation = Quaternion.LookRotation(new Vector3(dir.x, 0, dir.z));
 
@@ -162,12 +168,13 @@ public class EnemyLogic : MonoBehaviour
         {
             ChangeState(AIState.chase);
         }
-        else
+        else if (attackCooldownTimer <= 0f)
         {
             hs.TakeDamage(damage);
+            attackCooldownTimer = attackCooldown;
         }
     }
-    
+
     void PatrolToNextPost()
     {
         if (posts == null || posts.Length == 0) return;
