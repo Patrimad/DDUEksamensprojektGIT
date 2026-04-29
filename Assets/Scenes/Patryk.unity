@@ -338,6 +338,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1821544565305215696, guid: 60a3a91d6b3511d40bf474889054cfa5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284668781242567639, guid: 60a3a91d6b3511d40bf474889054cfa5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6620748981960626040, guid: 60a3a91d6b3511d40bf474889054cfa5, type: 3}
       propertyPath: m_Name
       value: UI
@@ -547,6 +555,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1550246668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2238841196076231540, guid: 60a3a91d6b3511d40bf474889054cfa5, type: 3}
+  m_PrefabInstance: {fileID: 1004747944}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de950f4f5aba53c4daf4a465dc8035c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthUI1
 --- !u!114 &1617565129 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7789041022472245598, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
@@ -1059,7 +1078,11 @@ PrefabInstance:
     - target: {fileID: 7107919043904974159, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
       propertyPath: crosshair
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1004747946}
+    - target: {fileID: 7789041022472245598, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
+      propertyPath: healthUI
+      value: 
+      objectReference: {fileID: 1550246668}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
