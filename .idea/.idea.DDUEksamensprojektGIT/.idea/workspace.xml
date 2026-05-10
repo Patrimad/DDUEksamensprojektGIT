@@ -5,9 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b77b49a4-6319-443c-b373-6c861df6711b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DDUEksamensprojektGIT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DDUEksamensprojektGIT/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Backsplash02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Backsplash02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Bathroom_Floor_Tiles.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Bathroom_Floor_Tiles.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Bathroom_Walls_Tile.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Bathroom_Walls_Tile.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Books.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Books.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Books02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Books02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Frame_Glass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Frame_Glass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Kitchen_Props_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Kitchen_Props_A.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Letters_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Letters_01.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Microwave.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Microwave.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Molding_Trim.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Molding_Trim.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_OfficeSupplies.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_OfficeSupplies.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Plateware.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Plateware.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Sky.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Sky.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_SmallTable.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_SmallTable.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Wood_Bowl_A.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Wood_Bowl_A.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Wood_Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Wood_Floor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Wooden_Bowl_B.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/Materials/M_Wooden_Bowl_B.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_Decals.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_Decals.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_Glass.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_Glass.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_Kitchen_Master.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_Kitchen_Master.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_PBR_OPAQUE_ORM_LeartesMasterMaterial.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_PBR_OPAQUE_ORM_LeartesMasterMaterial.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_Sky.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_Sky.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_VertexPaintGround.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StylArts/StylizedHouseInterior/HDRP/Art/ShaderGraphs/S_VertexPaintGround.shadergraph" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +137,7 @@
       <workItem from="1777360001415" duration="8481000" />
       <workItem from="1777548329076" duration="1186000" />
       <workItem from="1777886418070" duration="610000" />
+      <workItem from="1778137623394" duration="5000" />
     </task>
     <servers />
   </component>
