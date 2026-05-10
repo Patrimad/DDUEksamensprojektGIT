@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,9 +23,25 @@ public class GameManager : MonoBehaviour
 
     private CinemachineBrain cinemachineBrain;
 
+    private List<CheckpointSingle> checkpointSingleList = new List<CheckpointSingle>();
+    private int nextCheckpointSingleIndex;
+
     private void Awake()
     {
         cinemachineBrain = Camera.main.GetComponent<CinemachineBrain>();
+
+        Transform checkpointsTransform = transform.Find("Checkpoints");
+
+        //checkpointSingleList = new List<CheckpointSingle>();
+        foreach (Transform checkpointSingleTransform in checkpointsTransform)
+        {
+           CheckpointSingle checkpointSingle = checkpointSingleTransform.GetComponent<CheckpointSingle>();
+            checkpointSingle.SetCheckpoints(this);
+            checkpointSingleList.Add(checkpointSingle);
+        }
+
+        nextCheckpointSingleIndex = 0;
+
     }
 
     private void OnEnable()
@@ -75,5 +93,19 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         UnityEngine.SceneManagement.SceneManager.LoadScene(menuSceneName);
+    }
+
+    public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
+    {
+        if (checkpointSingleList.IndexOf(checkpointSingle) == nextCheckpointSingleIndex)
+        {
+            //Rigtige checkpoint
+            nextCheckpointSingleIndex++;
+        }
+        else
+        {
+                       //Forkert checkpoint, måske reset til start eller noget?
+            Debug.Log("Forkert checkpoint");
+        }
     }
 }
