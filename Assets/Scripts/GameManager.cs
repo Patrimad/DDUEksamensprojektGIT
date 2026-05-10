@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -7,6 +8,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public event EventHandler OnPlayerCorrectCheckpoint;
+    public event EventHandler OnPlayerIncorrectCheckpoint;
+
     [Header("References: Player")]
     [SerializeField] private HealthSystem healthSystem;
     [SerializeField] private PlayerInput playerInput;
@@ -100,12 +104,21 @@ public class GameManager : MonoBehaviour
         if (checkpointSingleList.IndexOf(checkpointSingle) == nextCheckpointSingleIndex)
         {
             //Rigtige checkpoint
-            nextCheckpointSingleIndex++;
+            Debug.Log("Forkert checkpoint");
+            CheckpointSingle correctCheckpointSingle = checkpointSingleList[nextCheckpointSingleIndex];
+            correctCheckpointSingle.Hide();
+
+            nextCheckpointSingleIndex = (nextCheckpointSingleIndex + 1) % checkpointSingleList.Count;
+            OnPlayerCorrectCheckpoint?.Invoke(this, EventArgs.Empty);
         }
         else
         {
                        //Forkert checkpoint, måske reset til start eller noget?
             Debug.Log("Forkert checkpoint");
+            OnPlayerIncorrectCheckpoint?.Invoke(this, EventArgs.Empty);
+
+            CheckpointSingle correctCheckpointSingle = checkpointSingleList[nextCheckpointSingleIndex];
+            correctCheckpointSingle.Show();
         }
     }
 }
