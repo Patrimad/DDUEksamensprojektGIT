@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CheckpointSingle : MonoBehaviour
 {
-    private GameManager gameManager;
+    private WorldCheckpoints worldCheckpoints;
     private MeshRenderer meshRenderer;
 
 
@@ -20,13 +20,13 @@ public class CheckpointSingle : MonoBehaviour
     {
         if (other.TryGetComponent<PlayerMovement>(out PlayerMovement player))
         {
-            gameManager.PlayerThroughCheckpoint(this);
+            worldCheckpoints.PlayerThroughCheckpoint(this);
         }
     }
 
-    public void SetCheckpoints(GameManager gameManager)
+    public void SetCheckpoints(WorldCheckpoints worldCheckpoints)
     {
-        this.gameManager = gameManager;
+        this.worldCheckpoints = worldCheckpoints;
     }
 
     public void Show()

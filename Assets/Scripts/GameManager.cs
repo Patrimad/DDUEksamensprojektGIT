@@ -8,8 +8,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public event EventHandler OnPlayerCorrectCheckpoint;
-    public event EventHandler OnPlayerIncorrectCheckpoint;
+    
 
     [Header("References: Player")]
     [SerializeField] private HealthSystem healthSystem;
@@ -27,25 +26,9 @@ public class GameManager : MonoBehaviour
 
     private CinemachineBrain cinemachineBrain;
 
-    private List<CheckpointSingle> checkpointSingleList = new List<CheckpointSingle>();
-    private int nextCheckpointSingleIndex;
-
     private void Awake()
     {
         cinemachineBrain = Camera.main.GetComponent<CinemachineBrain>();
-
-        Transform checkpointsTransform = transform.Find("Checkpoints");
-
-        //checkpointSingleList = new List<CheckpointSingle>();
-        foreach (Transform checkpointSingleTransform in checkpointsTransform)
-        {
-           CheckpointSingle checkpointSingle = checkpointSingleTransform.GetComponent<CheckpointSingle>();
-            checkpointSingle.SetCheckpoints(this);
-            checkpointSingleList.Add(checkpointSingle);
-        }
-
-        nextCheckpointSingleIndex = 0;
-
     }
 
     private void OnEnable()
@@ -99,26 +82,5 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(menuSceneName);
     }
 
-    public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
-    {
-        if (checkpointSingleList.IndexOf(checkpointSingle) == nextCheckpointSingleIndex)
-        {
-            //Rigtige checkpoint
-            Debug.Log("Forkert checkpoint");
-            CheckpointSingle correctCheckpointSingle = checkpointSingleList[nextCheckpointSingleIndex];
-            correctCheckpointSingle.Hide();
-
-            nextCheckpointSingleIndex = (nextCheckpointSingleIndex + 1) % checkpointSingleList.Count;
-            OnPlayerCorrectCheckpoint?.Invoke(this, EventArgs.Empty);
-        }
-        else
-        {
-                       //Forkert checkpoint, måske reset til start eller noget?
-            Debug.Log("Forkert checkpoint");
-            OnPlayerIncorrectCheckpoint?.Invoke(this, EventArgs.Empty);
-
-            CheckpointSingle correctCheckpointSingle = checkpointSingleList[nextCheckpointSingleIndex];
-            correctCheckpointSingle.Show();
-        }
-    }
+    
 }
