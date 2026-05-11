@@ -19,6 +19,14 @@ public class HealthSystem : MonoBehaviour
     public bool takingDamage = false;
     public bool isDead = false;
 
+    [Header("Audio")]
+    private AudioSource damageSource;
+    public AudioClip damageSound;
+
+    private void Awake()
+    {
+        damageSource = gameObject.AddComponent<AudioSource>();
+    }
     private void Start()
     {
         currentHealth = maxHealth;
@@ -35,7 +43,7 @@ public class HealthSystem : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (isDead) return;
-
+        damageSource.PlayOneShot(damageSound, UnityEngine.Random.Range(0.5f, 1f));
         takingDamage = true;
         CancelInvoke(nameof(ClearTakingDamage));
         Invoke(nameof(ClearTakingDamage), healthRegenCooldown);

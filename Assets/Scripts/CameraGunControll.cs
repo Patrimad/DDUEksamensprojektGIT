@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.Cinemachine;
+using NUnit.Framework;
+using System.Collections.Generic;
 
 public class CameraGunControll : MonoBehaviour
 {
@@ -20,11 +22,16 @@ public class CameraGunControll : MonoBehaviour
     [SerializeField] private float minRaycastDistance = 2f;
     [SerializeField] private LayerMask raycastMask;
 
+    [Header("Audio")]
+    private AudioSource dartSFX;
+    public List<AudioClip> darts = new List<AudioClip>();
+
     private Camera mainCamera;
 
     private void Awake()
     {
         mainCamera = Camera.main;
+        dartSFX = gameObject.AddComponent<AudioSource>();
     }
 
     void Update()
@@ -35,7 +42,16 @@ public class CameraGunControll : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
-        if (value.isPressed) Shoot();
+        if (value.isPressed)
+        {
+            Shoot();
+            if(darts != null)
+            {
+                int randomIndex = Random.Range(0, darts.Count);
+                dartSFX.PlayOneShot(darts[randomIndex], Random.Range(0.85f, 1.25f));
+
+            }
+        }
     }
 
     void OnAim(InputValue value)
