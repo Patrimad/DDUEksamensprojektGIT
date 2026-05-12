@@ -925,21 +925,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Main
       objectReference: {fileID: 0}
-    - target: {fileID: 7107919043904974159, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
-      propertyPath: crosshair
-      value: 
-      objectReference: {fileID: 243649152}
-    - target: {fileID: 7789041022472245598, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
-      propertyPath: healthUI
-      value: 
-      objectReference: {fileID: 1806715859}
     - target: {fileID: 8574319464579471199, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.011298111
-      objectReference: {fileID: 0}
-    - target: {fileID: 8574319464579471199, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.959186
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1926,11 +1914,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235408688}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &243649152 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6047395672748812915, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
-  m_PrefabInstance: {fileID: 125695439}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &258426965 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8221665544656589304, guid: 6d590dffb0c310a47ab438b96492d0d2, type: 3}
@@ -12322,17 +12305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32dd2b390b6884f43a18125d768d896d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
---- !u!114 &1806715859 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8230945061609654789, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
-  m_PrefabInstance: {fileID: 125695439}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de950f4f5aba53c4daf4a465dc8035c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthUI1
 --- !u!1001 &1821076399
 PrefabInstance:
   m_ObjectHideFlags: 0
