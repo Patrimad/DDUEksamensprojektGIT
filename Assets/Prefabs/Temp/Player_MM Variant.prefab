@@ -61,9 +61,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3938910401734660753, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938910401734660753, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3938910401734660753, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: ab873149768e30e4c9b9f34dc7c0b7c3, type: 3}
     - target: {fileID: 4177153195261336711, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -114,6 +122,7 @@ PrefabInstance:
     - {fileID: 3530238936054544309, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
     - {fileID: 3825425562740980802, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
     - {fileID: 4246468454659592827, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
+    - {fileID: 3948081027600576009, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5836885587481460653, guid: ca25ebdb80333820b81f6f5251f2ac94, type: 3}

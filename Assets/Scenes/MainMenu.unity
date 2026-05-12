@@ -1544,10 +1544,6 @@ PrefabInstance:
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: ab873149768e30e4c9b9f34dc7c0b7c3, type: 3}
-    - target: {fileID: 9164507203672100263, guid: 683737cd9f39cce4abc58afbddb755d7, type: 3}
-      propertyPath: playerMovement
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
