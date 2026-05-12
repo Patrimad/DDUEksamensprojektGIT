@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Glass
-  m_Shader: {fileID: -6465566751694194690, guid: 1a207e3bee00db44b940e6f362a8e148, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: f41c0b40b0dc8d940a7f23c132957df4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,12 +41,16 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_3fcd9da111744af8ae8ebba0d4663d95:
+        m_Texture: {fileID: 2800000, guid: 21573b8d07711334c8d74f9a45581a7d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _AnisotropyMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BASE_COLOR_MAP:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 23b1a8391c3f62540a0506ed9428fb2a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BUMP_MAP:
@@ -171,6 +175,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - Vector1_01e874f3d25648ecb33ccd7ce327b48a: 0
+    - Vector1_1981a28ffa024c7dbafabc86c73aa805: 0
+    - Vector1_50fbc258b93c4f7ba8621d4d87d33e9c: 0
+    - Vector1_835cc90d1cb94fa7b4cd0cb0879d0615: 0
+    - Vector1_b827869c21a34503bd57cbca845b11a4: 0
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -308,6 +317,8 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 0
     m_Colors:
+    - Color_1: {r: 0, g: 0, b: 0, a: 0}
+    - Color_7150eba2bc994aa89f0bd02210a02acf: {r: 0, g: 0, b: 0, a: 0}
     - _BASE_COLOR: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 0.2784314}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}

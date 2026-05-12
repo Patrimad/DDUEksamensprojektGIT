@@ -16,8 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Audio")]
     public AudioClip rollingClip;
     public float minRollSpeed = 0.1f;
-    public float maxAcceleration = 20f;
-    public float rollingVolume = 2f;
+    public float maxAcceleration = 2f;
 
     public AudioClip thumpClip;
     public float minImpactSpeed = 2f;
@@ -86,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             if (!rollingSource.isPlaying)
                 rollingSource.Play();
 
-            rollingSource.volume = Mathf.Clamp01(acceleration / maxAcceleration) * rollingVolume;
+            rollingSource.volume = Mathf.Clamp01(acceleration / maxAcceleration);
         }
         else
         {

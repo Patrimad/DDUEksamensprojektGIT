@@ -9,12 +9,16 @@ public class CollectibleManager : MonoBehaviour
     public static CollectibleManager Instance { get; private set; }
     public List<Collectibles> allCollectibles = new List<Collectibles>();
     public int totalScore = 0;
+    private AudioSource audioSource;
     
 
     Dictionary<string, bool> collectedState = new Dictionary<string, bool>();
 
     void Awake()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.volume = 0.5f;
+
         if (Instance == null) Instance = this; 
         else Destroy(gameObject);
     }

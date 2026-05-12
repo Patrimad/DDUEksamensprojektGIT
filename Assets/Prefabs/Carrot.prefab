@@ -231,6 +231,7 @@ MonoBehaviour:
   value: 1
   respawn: 0
   respawnTime: 5
+  collectSFX: {fileID: 8300000, guid: 99e56393839cfca4e9acb6b3742e4bfa, type: 3}
   manager: {fileID: 0}
 --- !u!136 &6767236428490711864
 CapsuleCollider:
