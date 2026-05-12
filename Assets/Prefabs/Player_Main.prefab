@@ -833,7 +833,7 @@ Transform:
   m_GameObject: {fileID: 3825425562740980802}
   serializedVersion: 2
   m_LocalRotation: {x: -0.1420055, y: 0.0014123591, z: 0.00020261628, w: 0.9898649}
-  m_LocalPosition: {x: -0.011298111, y: 0.00015985966, z: -3.959186}
+  m_LocalPosition: {x: -0.01129818, y: 0.00015985966, z: -3.959186}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -921,11 +921,11 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 3
   m_AntialiasingQuality: 2
   m_StopNaN: 0
-  m_Dithering: 0
+  m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_AllowHDROutput: 1
@@ -935,7 +935,7 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_TaaSettings:
-    m_Quality: 3
+    m_Quality: 4
     m_FrameInfluence: 0.1
     m_JitterScale: 1
     m_MipBias: 0
