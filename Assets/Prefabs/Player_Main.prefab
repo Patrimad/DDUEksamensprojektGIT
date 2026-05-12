@@ -1543,7 +1543,7 @@ MonoBehaviour:
   freeLookCam: {fileID: 6111993159157778766}
   aimCamera: {fileID: 3169972993035435633}
   crosshair: {fileID: 6047395672748812915}
-  bulletSpeed: 30
+  bulletSpeed: 50
   maxRaycastDistance: 500
   minRaycastDistance: 2
   raycastMask:
