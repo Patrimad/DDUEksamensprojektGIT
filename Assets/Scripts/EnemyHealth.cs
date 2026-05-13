@@ -2,14 +2,9 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-
-
     public int maxHealth = 3;
     private int currentHealth;
 
-    LayerMask DartLayer; // Layer for the enemy
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = maxHealth;
@@ -23,12 +18,14 @@ public class EnemyHealth : MonoBehaviour
             Debug.Log("Enemy died!");
             Die();
         }
-
     }
 
     public void Die()
     {
-        // Add death logic here (e.g., play animation, drop loot, etc.)
+        if (SpawnManager.Instance != null)
+        {
+            SpawnManager.Instance.ReportEnemyKilled();
+        }
         Destroy(gameObject);
     }
 }

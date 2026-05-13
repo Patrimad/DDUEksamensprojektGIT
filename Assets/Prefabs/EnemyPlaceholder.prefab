@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: 5451245453027022716}
   - component: {fileID: 6806773105706329431}
   - component: {fileID: 2633325507529001395}
+  - component: {fileID: 7575666992087615826}
+  - component: {fileID: 3793866074943202368}
+  - component: {fileID: 8294061606331866391}
+  - component: {fileID: 4055746186290508904}
   m_Layer: 3
   m_Name: EnemyPlaceholder
   m_TagString: Untagged
@@ -151,6 +155,90 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.33384007, y: 0.81945765, z: 1}
   m_Center: {x: -0.000000029802322, y: -0.379651, z: 0}
+--- !u!195 &7575666992087615826
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234417948873373341}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.2
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!54 &3793866074943202368
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234417948873373341}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
+--- !u!114 &8294061606331866391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234417948873373341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919ad6b03fd96154dab7f9bb5b3b2211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyCombat
+  f_damage: 1
+--- !u!114 &4055746186290508904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234417948873373341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f50bea28bebd7afa95ed3562b87091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyLogic
+  speed: 5
+  damage: 1
+  chaseRange: 12
+  attackRange: 2
+  patrolRange: 20
+  changeStateDelay: 3
+  posts: []
+  idleWaitDuration: 2
+  currentState: 0
+  attackCooldown: 200
 --- !u!1 &4468072526202771873
 GameObject:
   m_ObjectHideFlags: 0
